@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-vulcanize",     "homepage": "https://github.com/npmdoc/node-npmdoc-vulcanize",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-vulcanize.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic api documentation for  [vulcanize (v1.15.4)](https://github.com/Polymer/vulcanize#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-vulcanize.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-vulcanize) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-vulcanize.svg)](https://travis-ci.org/npmdoc/node-npmdoc-vulcanize)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-vulcanize",
+    "keywords": [
+        "documentation",
+        "vulcanize"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_vulcanize.js",
+    "name": "npmdoc-vulcanize",
+    "nameAlias": "npmdoc_vulcanize",
+    "nameOriginal": "npmdoc-vulcanize",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-vulcanize.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
