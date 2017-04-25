@@ -1,0 +1,1410 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Polymer/vulcanize#readme"
+
+    >vulcanize (v1.15.4)</a>
+</h1>
+<h4>Process Web Components into one output file</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize">module vulcanize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.vulcanize">
+            function <span class="apidocSignatureSpan"></span>vulcanize
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.comment_map">
+            function <span class="apidocSignatureSpan">vulcanize.</span>comment_map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver">
+            function <span class="apidocSignatureSpan">vulcanize.</span>pathresolver
+            <span class="apidocSignatureSpan">(abspath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.process">
+            function <span class="apidocSignatureSpan">vulcanize.</span>process
+            <span class="apidocSignatureSpan">(target, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.setOptions">
+            function <span class="apidocSignatureSpan">vulcanize.</span>setOptions
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vulcanize.</span>comment_map.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vulcanize.</span>matchers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vulcanize.</span>pathresolver.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize.comment_map">module vulcanize.comment_map</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.comment_map.comment_map">
+            function <span class="apidocSignatureSpan">vulcanize.</span>comment_map
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize.comment_map.prototype">module vulcanize.comment_map.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.comment_map.prototype.get">
+            function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>get
+            <span class="apidocSignatureSpan">(comment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.comment_map.prototype.keys">
+            function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>keys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.comment_map.prototype.set">
+            function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>set
+            <span class="apidocSignatureSpan">(comment, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize.matchers">module vulcanize.matchers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.ALL_CSS_LINK">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>ALL_CSS_LINK
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.CSS">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>CSS
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.CSS_LINK">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>CSS_LINK
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.JS">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.JS_INLINE">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS_INLINE
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.JS_SRC">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS_SRC
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.POLY_CSS_LINK">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>POLY_CSS_LINK
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.base">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>base
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.body">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>body
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.domModule">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>domModule
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.head">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>head
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.htmlImport">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>htmlImport
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.meta">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>meta
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.polymerElement">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>polymerElement
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.polymerExternalStyle">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>polymerExternalStyle
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.targetMatcher">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>targetMatcher
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.matchers.urlAttrs">
+            function <span class="apidocSignatureSpan">vulcanize.matchers.</span>urlAttrs
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize.pathresolver">module vulcanize.pathresolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.pathresolver">
+            function <span class="apidocSignatureSpan">vulcanize.</span>pathresolver
+            <span class="apidocSignatureSpan">(abspath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vulcanize.pathresolver.prototype">module vulcanize.pathresolver.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.acid">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>acid
+            <span class="apidocSignatureSpan">(doc, docUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.isAbsoluteUrl">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>isAbsoluteUrl
+            <span class="apidocSignatureSpan">(href)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.isTemplatedUrl">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>isTemplatedUrl
+            <span class="apidocSignatureSpan">(href)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.pathToUrl">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>pathToUrl
+            <span class="apidocSignatureSpan">(filePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.resolvePaths">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>resolvePaths
+            <span class="apidocSignatureSpan">(importDoc, importUrl, mainDocUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.rewriteRelPath">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>rewriteRelPath
+            <span class="apidocSignatureSpan">(importUrl, mainDocUrl, relUrl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.rewriteURL">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>rewriteURL
+            <span class="apidocSignatureSpan">(importUrl, mainDocUrl, cssText)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vulcanize.pathresolver.prototype.urlToPath">
+            function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>urlToPath
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize" id="apidoc.module.vulcanize">module vulcanize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.vulcanize" id="apidoc.element.vulcanize.vulcanize">
+        function <span class="apidocSignatureSpan"></span>vulcanize
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Vulcan(opts) {
+    // implicitStrip should be true by default
+  this.implicitStrip = opts.implicitStrip === undefined ? true : Boolean(opts.implicitStrip);
+  this.abspath = (String(opts.abspath) === opts.abspath &#x26;&#x26; String(opts.abspath).trim() !== &#x27;&#x27;) ? path.resolve(opts.abspath) : null
+;
+  this.pathResolver = new PathResolver(this.abspath);
+  this.addedImports = Array.isArray(opts.addedImports) ? opts.addedImports : [];
+  this.excludes = Array.isArray(opts.excludes) ? opts.excludes : [];
+  this.stripExcludes = Array.isArray(opts.stripExcludes) ? opts.stripExcludes : [];
+  this.stripComments = Boolean(opts.stripComments);
+  this.enableCssInlining = Boolean(opts.inlineCss);
+  this.enableScriptInlining = Boolean(opts.inlineScripts);
+  this.inputUrl = String(opts.inputUrl) === opts.inputUrl ? opts.inputUrl : &#x27;&#x27;;
+  this.fsResolver = opts.fsResolver;
+  this.redirects = Array.isArray(opts.redirects) ? opts.redirects : [];
+  if (opts.loader) {
+    this.loader = opts.loader;
+  } else {
+    this.loader = buildLoader({
+      abspath: this.abspath,
+      fsResolver: this.fsResolver,
+      excludes: this.excludes,
+      redirects: this.redirects
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.comment_map" id="apidoc.element.vulcanize.comment_map">
+        function <span class="apidocSignatureSpan">vulcanize.</span>comment_map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CommentMap() {
+  this.commentMap = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver" id="apidoc.element.vulcanize.pathresolver">
+        function <span class="apidocSignatureSpan">vulcanize.</span>pathresolver
+        <span class="apidocSignatureSpan">(abspath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PathResolver(abspath) {
+  if (abspath) {
+    this.abspath = abspath;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.process" id="apidoc.element.vulcanize.process">
+        function <span class="apidocSignatureSpan">vulcanize.</span>process
+        <span class="apidocSignatureSpan">(target, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function process(target, cb) {
+  singleton.process(target, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## 1.10.1
+- Typecheck inputs in library usage
+- Fix README to say that `stripExcludes` is an Array not a Boolean
+
+## 1.10.0
+- Add `inputUrl` option to work around grunt and gulp plugins providing
+  filepaths that cannot be used as URLs to `vulcanize.<span class="apidocCodeKeywordSpan">process</span>()`
+
+## 1.9.3
+- Fix abspath bug on windows machines
+
+## 1.9.2
+- Use new class API in binary
+- Update dependencies
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.setOptions" id="apidoc.element.vulcanize.setOptions">
+        function <span class="apidocSignatureSpan">vulcanize.</span>setOptions
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setOptions(opts) {
+  singleton = new Vulcan(opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize.comment_map" id="apidoc.module.vulcanize.comment_map">module vulcanize.comment_map</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.comment_map.comment_map" id="apidoc.element.vulcanize.comment_map.comment_map">
+        function <span class="apidocSignatureSpan">vulcanize.</span>comment_map
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CommentMap() {
+  this.commentMap = Object.create(null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize.comment_map.prototype" id="apidoc.module.vulcanize.comment_map.prototype">module vulcanize.comment_map.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.comment_map.prototype.get" id="apidoc.element.vulcanize.comment_map.prototype.get">
+        function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>get
+        <span class="apidocSignatureSpan">(comment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (comment) {
+  return this.commentMap[comment];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      dom5.remove(comment);
+    });
+    // Deduplicate license comments
+    comments.keys().forEach(function (commentData) {
+      if (commentData.indexOf(&#x22;@license&#x22;) == -1) {
+        return;
+      }
+      this.prepend(head, comments.<span class="apidocCodeKeywordSpan">get</span>(commentData));
+    }, this);
+    return docObj;
+  }.bind(this));
+}
+chain.then(function(docObj) {
+  cb(null, dom5.serialize(docObj.doc));
+}).catch(cb);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.comment_map.prototype.keys" id="apidoc.element.vulcanize.comment_map.prototype.keys">
+        function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>keys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keys = function () {
+  return Object.keys(this.commentMap);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+vulcanize.process(target, function(err, content) {
+if (err) {
+  process.stderr.write(require(&#x27;util&#x27;).inspect(err));
+  process.exit(1);
+}
+
+if (args[&#x27;out-request-list&#x27;]) {
+  var urls = Object.<span class="apidocCodeKeywordSpan">keys</span>(vulcanize.loader.requests).filter(function(url) {
+    return !vulcanize.isExcludedHref(url);
+  });
+  fs.writeFileSync(args[&#x27;out-request-list&#x27;], urls.join(&#x27;\n&#x27;) + &#x27;\n&#x27;);
+}
+
+if (args[&#x27;out-html&#x27;]) {
+  fs.writeFileSync(args[&#x27;out-html&#x27;], content + &#x27;\n&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.comment_map.prototype.set" id="apidoc.element.vulcanize.comment_map.prototype.set">
+        function <span class="apidocSignatureSpan">vulcanize.comment_map.prototype.</span>set
+        <span class="apidocSignatureSpan">(comment, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (comment, value) {
+  this.commentMap[comment] = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (this.stripComments) {
+chain = chain.then(function(docObj) {
+  var comments = new CommentMap();
+  var doc = docObj.doc;
+  var head = dom5.query(doc, matchers.head);
+  // remove all comments
+  dom5.nodeWalkAll(doc, dom5.isCommentNode).forEach(function(comment) {
+    comments.<span class="apidocCodeKeywordSpan">set</span>(comment.data, comment);
+    dom5.remove(comment);
+  });
+  // Deduplicate license comments
+  comments.keys().forEach(function (commentData) {
+    if (commentData.indexOf(&#x22;@license&#x22;) == -1) {
+      return;
+    }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize.matchers" id="apidoc.module.vulcanize.matchers">module vulcanize.matchers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.ALL_CSS_LINK" id="apidoc.element.vulcanize.matchers.ALL_CSS_LINK">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>ALL_CSS_LINK
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ALL_CSS_LINK = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (rules[i](node)) {
+            return true;
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.CSS" id="apidoc.element.vulcanize.matchers.CSS">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>CSS
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">CSS = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.CSS_LINK" id="apidoc.element.vulcanize.matchers.CSS_LINK">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>CSS_LINK
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">CSS_LINK = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.JS" id="apidoc.element.vulcanize.matchers.JS">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JS = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.JS_INLINE" id="apidoc.element.vulcanize.matchers.JS_INLINE">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS_INLINE
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JS_INLINE = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.JS_SRC" id="apidoc.element.vulcanize.matchers.JS_SRC">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>JS_SRC
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JS_SRC = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.POLY_CSS_LINK" id="apidoc.element.vulcanize.matchers.POLY_CSS_LINK">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>POLY_CSS_LINK
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">POLY_CSS_LINK = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.base" id="apidoc.element.vulcanize.matchers.base">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>base
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base = function (node) {
+    if (!node.tagName) {
+        return false;
+    }
+    return node.tagName.toLowerCase() === n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.body" id="apidoc.element.vulcanize.matchers.body">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>body
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">body = function (node) {
+    if (!node.tagName) {
+        return false;
+    }
+    return node.tagName.toLowerCase() === n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.domModule" id="apidoc.element.vulcanize.matchers.domModule">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>domModule
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">domModule = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.head" id="apidoc.element.vulcanize.matchers.head">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>head
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (node) {
+    if (!node.tagName) {
+        return false;
+    }
+    return node.tagName.toLowerCase() === n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.htmlImport" id="apidoc.element.vulcanize.matchers.htmlImport">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>htmlImport
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">htmlImport = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+var htmlImportEncountered = false;
+
+// Once we encounter an html import, we need to move things into the body,
+// because html imports contain things that can&#x27;t be in document
+// head.
+dom5.queryAll(head, this.moveToBodyMatcher).forEach(function(n) {
+  if (!htmlImportEncountered &#x26;&#x26; matchers.<span class="apidocCodeKeywordSpan">htmlImport</span>(n)) {
+    htmlImportEncountered = true;
+  }
+  if (htmlImportEncountered) {
+    this.removeElementAndNewline(n);
+    dom5.append(moveTarget, n);
+  }
+}, this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.meta" id="apidoc.element.vulcanize.matchers.meta">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>meta
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meta = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.polymerElement" id="apidoc.element.vulcanize.matchers.polymerElement">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>polymerElement
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">polymerElement = function (node) {
+    if (!node.tagName) {
+        return false;
+    }
+    return node.tagName.toLowerCase() === n;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.polymerExternalStyle" id="apidoc.element.vulcanize.matchers.polymerExternalStyle">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>polymerExternalStyle
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">polymerExternalStyle = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  inlineCss: function inlineCss(doc, href) {
+    var css_links = dom5.queryAll(doc, matchers.ALL_CSS_LINK);
+    var cssPromises = css_links.map(function(link) {
+var tag = link;
+var src = dom5.getAttribute(tag, &#x27;href&#x27;);
+var media = dom5.getAttribute(tag, &#x27;media&#x27;);
+var uri = url.resolve(href, src);
+var isPolymerExternalStyle = matchers.<span class="apidocCodeKeywordSpan">polymerExternalStyle</span>(tag);
+
+// let the loader handle the requests
+if (this.isExcludedHref(src)) {
+  return Promise.resolve(true);
+}
+// let the loader handle the requests
+return this.loader.request(uri).then(function(content) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.targetMatcher" id="apidoc.element.vulcanize.matchers.targetMatcher">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>targetMatcher
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">targetMatcher = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (!rules[i](node)) {
+            return false;
+        }
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.matchers.urlAttrs" id="apidoc.element.vulcanize.matchers.urlAttrs">
+        function <span class="apidocSignatureSpan">vulcanize.matchers.</span>urlAttrs
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">urlAttrs = function (node) {
+    for (var i = 0; i &#x3c; rules.length; i++) {
+        if (rules[i](node)) {
+            return true;
+        }
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize.pathresolver" id="apidoc.module.vulcanize.pathresolver">module vulcanize.pathresolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.pathresolver" id="apidoc.element.vulcanize.pathresolver.pathresolver">
+        function <span class="apidocSignatureSpan">vulcanize.</span>pathresolver
+        <span class="apidocSignatureSpan">(abspath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PathResolver(abspath) {
+  if (abspath) {
+    this.abspath = abspath;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vulcanize.pathresolver.prototype" id="apidoc.module.vulcanize.pathresolver.prototype">module vulcanize.pathresolver.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.acid" id="apidoc.element.vulcanize.pathresolver.prototype.acid">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>acid
+        <span class="apidocSignatureSpan">(doc, docUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function acid(doc, docUrl) {
+  var base = dom5.query(doc, matchers.base);
+  if (base) {
+    var baseUrl = dom5.getAttribute(base, &#x27;href&#x27;);
+    var baseTarget = dom5.getAttribute(base, &#x27;target&#x27;);
+    dom5.remove(base);
+    if (baseUrl) {
+      if (baseUrl.slice(-1) === &#x27;/&#x27;) {
+        baseUrl = baseUrl.slice(0, -1);
+      }
+      var docBaseUrl = url.resolve(docUrl, baseUrl + &#x27;/.index.html&#x27;);
+      this.resolvePaths(doc, docBaseUrl, docUrl);
+    }
+    if (baseTarget) {
+      var elementsNeedTarget = dom5.queryAll(doc, matchers.targetMatcher);
+      elementsNeedTarget.forEach(function(el) {
+        dom5.setAttribute(el, &#x27;target&#x27;, baseTarget);
+      });
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var body = dom5.query(doc, matchers.body);
+var importNodes = tree.html.import;
+// early check for old polymer versions
+if (this.hasOldPolymer(doc)) {
+  throw new Error(constants.OLD_POLYMER + &#x27; File: &#x27; + this.pathResolver.urlToPath(tree.href));
+}
+this.fixFakeExternalScripts(doc);
+this.pathResolver.<span class="apidocCodeKeywordSpan">acid</span>(doc, tree.href);
+var moveTarget;
+if (isMainDoc) {
+  // hide bodies of imports from rendering in main document
+  moveTarget = dom5.constructors.element(&#x27;div&#x27;);
+  dom5.setAttribute(moveTarget, &#x27;hidden&#x27;, &#x27;&#x27;);
+  dom5.setAttribute(moveTarget, &#x27;by-vulcanize&#x27;, &#x27;&#x27;);
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.isAbsoluteUrl" id="apidoc.element.vulcanize.pathresolver.prototype.isAbsoluteUrl">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>isAbsoluteUrl
+        <span class="apidocSignatureSpan">(href)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isAbsoluteUrl(href) {
+  return constants.ABS_URL.test(href);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+isAbsoluteUrl: function isAbsoluteUrl(href) {
+  return constants.ABS_URL.test(href);
+},
+
+rewriteRelPath: function rewriteRelPath(importUrl, mainDocUrl, relUrl) {
+  if (this.<span class="apidocCodeKeywordSpan">isAbsoluteUrl</span>(relUrl)) {
+    return relUrl;
+  }
+  var absUrl = url.resolve(importUrl, relUrl);
+  if (this.abspath) {
+    return url.resolve(&#x27;/&#x27;, absUrl);
+  }
+  var parsedFrom = url.parse(mainDocUrl);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.isTemplatedUrl" id="apidoc.element.vulcanize.pathresolver.prototype.isTemplatedUrl">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>isTemplatedUrl
+        <span class="apidocSignatureSpan">(href)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isTemplatedUrl(href) {
+  return href.search(constants.URL_TEMPLATE) &#x3e;= 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// When the path is an empty string value the intent is to represent
+// in URL-speak &#x22;the same path that the current document is at&#x22;.
+// We&#x27;ll set it to &#x27;.&#x27; which better represents this intent to the
+// rewrite methods.
+if (attrValue === &#x27;&#x27;) {
+  attrValue = &#x27;.&#x27;;
+}
+if (attrValue &#x26;&#x26; !this.<span class="apidocCodeKeywordSpan">isTemplatedUrl</span>(attrValue)) {
+  var relUrl;
+  if (attr === &#x27;style&#x27;) {
+    relUrl = this.rewriteURL(importUrl, mainDocUrl, attrValue);
+  } else {
+    relUrl = this.rewriteRelPath(importUrl, mainDocUrl, attrValue);
+    if (attr === &#x27;assetpath&#x27; &#x26;&#x26; relUrl.length &#x3e; 0 &#x26;&#x26; relUrl.slice(-1) !== &#x27;/&#x27;) {
+      relUrl += &#x27;/&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.pathToUrl" id="apidoc.element.vulcanize.pathresolver.prototype.pathToUrl">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>pathToUrl
+        <span class="apidocSignatureSpan">(filePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pathToUrl(filePath) {
+  var absolutePath = path.resolve(filePath);
+  if (process.platform === &#x27;win32&#x27;) {
+    // encode C:\foo\ as C:/foo/
+    return absolutePath.split(&#x27;\\&#x27;).join(&#x27;/&#x27;);
+  } else {
+    return absolutePath;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  process: function process(target, cb) {
+    if (this.inputUrl) {
+      this._process(this.inputUrl, cb);
+    } else {
+      if (this.abspath) {
+        target = pathPosix.resolve(&#x27;/&#x27;, target);
+      } else {
+        target = this.pathResolver.<span class="apidocCodeKeywordSpan">pathToUrl</span>(path.resolve(target));
+      }
+      this._process(target, cb);
+    }
+  }
+};
+
+Vulcan.process = function process(target, cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.resolvePaths" id="apidoc.element.vulcanize.pathresolver.prototype.resolvePaths">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>resolvePaths
+        <span class="apidocSignatureSpan">(importDoc, importUrl, mainDocUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolvePaths(importDoc, importUrl, mainDocUrl) {
+  // rewrite URLs in element attributes
+  var nodes = dom5.queryAll(importDoc, matchers.urlAttrs);
+  var attrValue;
+  for (var i = 0, node; i &#x3c; nodes.length; i++) {
+    node = nodes[i];
+    for (var j = 0, attr; j &#x3c; constants.URL_ATTR.length; j++) {
+      attr = constants.URL_ATTR[j];
+      attrValue = dom5.getAttribute(node, attr);
+      // When the path is an empty string value the intent is to represent
+      // in URL-speak &#x22;the same path that the current document is at&#x22;.
+      // We&#x27;ll set it to &#x27;.&#x27; which better represents this intent to the
+      // rewrite methods.
+      if (attrValue === &#x27;&#x27;) {
+        attrValue = &#x27;.&#x27;;
+      }
+      if (attrValue &#x26;&#x26; !this.isTemplatedUrl(attrValue)) {
+        var relUrl;
+        if (attr === &#x27;style&#x27;) {
+          relUrl = this.rewriteURL(importUrl, mainDocUrl, attrValue);
+        } else {
+          relUrl = this.rewriteRelPath(importUrl, mainDocUrl, attrValue);
+          if (attr === &#x27;assetpath&#x27; &#x26;&#x26; relUrl.length &#x3e; 0 &#x26;&#x26; relUrl.slice(-1) !== &#x27;/&#x27;) {
+            relUrl += &#x27;/&#x27;;
+          }
+        }
+        dom5.setAttribute(node, attr, relUrl);
+      }
+    }
+  }
+  // rewrite URLs in stylesheets
+  var styleNodes = dom5.queryAll(importDoc, matchers.CSS);
+  for (i = 0, node; i &#x3c; styleNodes.length; i++) {
+    node = styleNodes[i];
+    var styleText = dom5.getTextContent(node);
+    styleText = this.rewriteURL(importUrl, mainDocUrl, styleText);
+    dom5.setTextContent(node, styleText);
+  }
+  // add assetpath to dom-modules in importDoc
+  var domModules = dom5.queryAll(importDoc, matchers.domModule);
+  for (i = 0, node; i &#x3c; domModules.length; i++) {
+    node = domModules[i];
+    var assetPathUrl = this.rewriteRelPath(importUrl, mainDocUrl, &#x27;&#x27;);
+    assetPathUrl = pathPosix.dirname(assetPathUrl) + &#x27;/&#x27;;
+    dom5.setAttribute(node, &#x27;assetpath&#x27;, assetPathUrl);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var baseTarget = dom5.getAttribute(base, &#x27;target&#x27;);
+dom5.remove(base);
+if (baseUrl) {
+  if (baseUrl.slice(-1) === &#x27;/&#x27;) {
+    baseUrl = baseUrl.slice(0, -1);
+  }
+  var docBaseUrl = url.resolve(docUrl, baseUrl + &#x27;/.index.html&#x27;);
+  this.<span class="apidocCodeKeywordSpan">resolvePaths</span>(doc, docBaseUrl, docUrl);
+}
+if (baseTarget) {
+  var elementsNeedTarget = dom5.queryAll(doc, matchers.targetMatcher);
+  elementsNeedTarget.forEach(function(el) {
+    dom5.setAttribute(el, &#x27;target&#x27;, baseTarget);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.rewriteRelPath" id="apidoc.element.vulcanize.pathresolver.prototype.rewriteRelPath">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>rewriteRelPath
+        <span class="apidocSignatureSpan">(importUrl, mainDocUrl, relUrl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rewriteRelPath(importUrl, mainDocUrl, relUrl) {
+  if (this.isAbsoluteUrl(relUrl)) {
+    return relUrl;
+  }
+  var absUrl = url.resolve(importUrl, relUrl);
+  if (this.abspath) {
+    return url.resolve(&#x27;/&#x27;, absUrl);
+  }
+  var parsedFrom = url.parse(mainDocUrl);
+  var parsedTo = url.parse(absUrl);
+  if (parsedFrom.protocol === parsedTo.protocol &#x26;&#x26; parsedFrom.host === parsedTo.host) {
+    var pathname = pathPosix.relative(pathPosix.dirname(parsedFrom.pathname), parsedTo.pathname);
+    return url.format({
+      pathname: pathname,
+      search: parsedTo.search,
+      hash: parsedTo.hash
+    });
+  }
+  return absUrl;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    attrValue = &#x27;.&#x27;;
+  }
+  if (attrValue &#x26;&#x26; !this.isTemplatedUrl(attrValue)) {
+    var relUrl;
+    if (attr === &#x27;style&#x27;) {
+      relUrl = this.rewriteURL(importUrl, mainDocUrl, attrValue);
+    } else {
+      relUrl = this.<span class="apidocCodeKeywordSpan">rewriteRelPath</span>(importUrl, mainDocUrl, attrValue);
+      if (attr === &#x27;assetpath&#x27; &#x26;&#x26; relUrl.length &#x3e; 0 &#x26;&#x26; relUrl.slice(-1) !== &#x27;/&#x27;) {
+        relUrl += &#x27;/&#x27;;
+      }
+    }
+    dom5.setAttribute(node, attr, relUrl);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.rewriteURL" id="apidoc.element.vulcanize.pathresolver.prototype.rewriteURL">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>rewriteURL
+        <span class="apidocSignatureSpan">(importUrl, mainDocUrl, cssText)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rewriteURL(importUrl, mainDocUrl, cssText) {
+  return cssText.replace(constants.URL, function(match) {
+    var path = match.replace(/[&#x22;&#x27;]/g, &#x22;&#x22;).slice(4, -1);
+    path = this.rewriteRelPath(importUrl, mainDocUrl, path);
+    return &#x27;url(&#x22;&#x27; + path + &#x27;&#x22;)&#x27;;
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// rewrite methods.
+if (attrValue === &#x27;&#x27;) {
+  attrValue = &#x27;.&#x27;;
+}
+if (attrValue &#x26;&#x26; !this.isTemplatedUrl(attrValue)) {
+  var relUrl;
+  if (attr === &#x27;style&#x27;) {
+    relUrl = this.<span class="apidocCodeKeywordSpan">rewriteURL</span>(importUrl, mainDocUrl, attrValue);
+  } else {
+    relUrl = this.rewriteRelPath(importUrl, mainDocUrl, attrValue);
+    if (attr === &#x27;assetpath&#x27; &#x26;&#x26; relUrl.length &#x3e; 0 &#x26;&#x26; relUrl.slice(-1) !== &#x27;/&#x27;) {
+      relUrl += &#x27;/&#x27;;
+    }
+  }
+  dom5.setAttribute(node, attr, relUrl);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vulcanize.pathresolver.prototype.urlToPath" id="apidoc.element.vulcanize.pathresolver.prototype.urlToPath">
+        function <span class="apidocSignatureSpan">vulcanize.pathresolver.prototype.</span>urlToPath
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function urlToPath(uri) {
+  var parsed = url.parse(uri);
+  if (process.platform === &#x27;win32&#x27;) {
+    return parsed.protocol + parsed.pathname.split(&#x27;/&#x27;).join(&#x27;\\&#x27;);
+  } else {
+    return (parsed.protocol || &#x27;&#x27;) + parsed.pathname;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var doc = tree.html.ast;
+var imports = tree.imports;
+var head = dom5.query(doc, matchers.head);
+var body = dom5.query(doc, matchers.body);
+var importNodes = tree.html.import;
+// early check for old polymer versions
+if (this.hasOldPolymer(doc)) {
+  throw new Error(constants.OLD_POLYMER + &#x27; File: &#x27; + this.pathResolver.<span class="apidocCodeKeywordSpan">urlToPath</
+span>(tree.href));
+}
+this.fixFakeExternalScripts(doc);
+this.pathResolver.acid(doc, tree.href);
+var moveTarget;
+if (isMainDoc) {
+  // hide bodies of imports from rendering in main document
+  moveTarget = dom5.constructors.element(&#x27;div&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
